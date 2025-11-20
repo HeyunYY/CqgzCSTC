@@ -1,0 +1,135 @@
+/* 用户登录表单样式 */
+#userLoginForm {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+#userLoginForm.active {
+    display: block;
+}
+
+/* 管理员登录表单样式 */
+#adminLoginForm {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+#adminLoginForm.active {
+    display: block;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #eee;
+    border-radius: 15px;
+    font-size: 1rem;
+    transition: var(--transition);
+    background-color: #f9f9f9;
+}
+
+.form-group input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.2);
+    background-color: white;
+}
+
+.form-group label {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    color: #999;
+    transition: var(--transition);
+    pointer-events: none;
+    background-color: #f9f9f9;
+    padding: 0 5px;
+}
+
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 10px;
+    font-size: 0.8rem;
+    color: var(--primary-color);
+    background-color: white;
+}
+
+/* 用户类型切换开关样式 */
+.user-type-toggle {
+    display: none;
+    text-align: center;
+    margin-bottom: 20px;
+    animation: fadeIn 0.3s ease;
+}
+
+.user-type-toggle.active {
+    display: block;
+}
+
+.toggle-switch {
+    display: inline-flex;
+    background-color: #f0f0f0;
+    border-radius: 30px;
+    padding: 5px;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-switch input[type="radio"] {
+    display: none;
+}
+
+.toggle-switch label {
+    padding: 8px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    z-index: 1;
+    transition: all 0.3s ease;
+    margin-bottom: 0;
+    border-radius: 30px;
+    color: #333;
+}
+
+.toggle-switch input[type="radio"]:checked + label {
+    color: white;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    box-shadow: 0 2px 5px rgba(66, 133, 244, 0.3);
+}
+
+/* 表单切换动画 */
+.form-fade-out {
+    animation: fadeOut 0.3s ease forwards;
+}
+
+.form-fade-in {
+    animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}

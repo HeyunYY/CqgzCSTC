@@ -1,0 +1,62 @@
+/* 视差滚动动画效果 */
+
+/* 定义淡入动画关键帧 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 应用动画的基本样式 */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* 动画激活状态 */
+.scroll-animate.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 为不同元素设置不同的动画延迟 */
+.scroll-animate.delay-1 {
+  transition-delay: 0.1s;
+}
+
+.scroll-animate.delay-2 {
+  transition-delay: 0.2s;
+}
+
+.scroll-animate.delay-3 {
+  transition-delay: 0.3s;
+}
+
+.scroll-animate.delay-4 {
+  transition-delay: 0.4s;
+}
+
+.scroll-animate.delay-5 {
+  transition-delay: 0.5s;
+}
+
+/* 为服务卡片添加特殊动画 */
+.service-card.scroll-animate {
+  transform: translateY(30px);
+}
+
+/* 为项目卡片添加特殊动画 */
+.project-card.scroll-animate {
+  transform: translateY(30px);
+}
+
+/* 为团队成员添加特殊动画 */
+.team-member.scroll-animate {
+  transform: translateY(30px);
+}
