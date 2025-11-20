@@ -840,6 +840,75 @@ footer {
     color: #bbb;
 }
 
+/* FAQ部分样式 */
+.faq {
+    padding: 100px 0;
+}
+
+.faq-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.faq-item:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.faq-question {
+    padding: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.faq-question h3 {
+    font-size: 1.2rem;
+    color: var(--dark-color);
+    margin: 0;
+    flex: 1;
+}
+
+.faq-question i {
+    transition: var(--transition);
+    color: var(--primary-color);
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.faq-item.active .faq-answer {
+    padding: 0 20px 20px;
+    max-height: 500px;
+}
+
+.faq-answer p {
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
 /* 登录/注册面板 - 优化样式和动画 */
 .auth-panel {
     position: fixed;
@@ -1146,7 +1215,7 @@ footer {
     }
 
     .nav-links.active {
-        max-height: 500px;
+        max-height: 540px;
         padding: 20px;
         transition: max-height 0.5s ease-in;
     }
@@ -1203,6 +1272,127 @@ footer {
     .member-header {
         flex-direction: column;
         align-items: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .section-title h2 {
+        font-size: 2rem;
+    }
+
+    .service-card,
+    .project-card {
+        padding: 20px;
+    }
+
+    .core-team {
+        grid-template-columns: 1fr;
+    }
+
+    .members-list {
+        grid-template-columns: 1fr;
+    }
+
+    .team-member {
+        width: 100%;
+    }
+
+    .carousel-item img {
+        height: 300px;
+    }
+}
+
+/* 活动日历样式 */
+.events-calendar {
+    padding: 100px 0;
+}
+
+.upcoming-events {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.events-list {
+    list-style: none;
+}
+
+.event-item {
+    display: flex;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 25px;
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.event-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-color);
+}
+
+.event-date {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-right: 20px;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.event-day {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.event-month {
+    font-size: 0.9rem;
+}
+
+.event-details {
+    flex: 1;
+}
+
+.event-details h4 {
+    font-size: 1.2rem;
+    color: var(--dark-color);
+    margin-bottom: 8px;
+}
+
+.event-details p {
+    color: #666;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.event-time {
+    background-color: #eef7ff;
+    color: var(--primary-color);
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+@media (max-width: 576px) {
+    .event-item {
+        flex-direction: column;
+    }
+    
+    .event-date {
+        margin-bottom: 15px;
     }
 }
 

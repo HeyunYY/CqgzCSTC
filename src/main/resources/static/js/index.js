@@ -226,3 +226,11 @@ $carouselIndicators.each(function() {
 $(window).on('load', function() {
     $('body').addClass('loaded');
 });
+
+// FAQ功能
+document.querySelectorAll('.faq-question').forEach(question => {
+    question.addEventListener('click', () => {
+        const faqItem = question.parentNode;
+        faqItem.classList.toggle('active');
+    });
+});
